@@ -1,0 +1,10 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+ <qresource>
+    <file>images/background.png</file>
+    <file>images/guadec-main.png</file>
+    <file>images/flatpak.png</file>
+    <file>images/kde.png</file>
+ </qresource>
+</RCC>
+

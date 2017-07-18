@@ -1,0 +1,10 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+ <qresource>
+    <file>qml/main.qml</file>
+    <file>qml/LoadingSlide.qml</file>
+    <file>qml/Presentation.qml</file>
+    <file>qml/SlideText.qml</file>
+ </qresource>
+</RCC>
+

@@ -1,0 +1,63 @@
+{
+    "app-id": "org.kde.flatpak-kde",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "5.9",
+    "sdk": "org.kde.Sdk",
+    "command": "flatpak-kde",
+    "rename-icon": "flatpak",
+    "finish-args": [
+        "--share=ipc",
+        "--socket=x11",
+        "--socket=wayland",
+        "--filesystem=host",
+        "--device=dri",
+        "--env=QT_LOGGING_RULES=qt.qpa.qflatpakplatform*.debug=true",
+        "--env=QT_QPA_PLATFORM=flatpak",
+        "--talk-name=org.kde.StatusNotifierWatcher"
+    ],
+    "build-options" : {
+        "cflags": "-O2 -g",
+        "cxxflags": "-O2 -g",
+        "env": {
+            "V": "1"
+        }
+    },
+    "modules": [
+        {
+            "name": "qml-presentation-system",
+            "no-autogen": true,
+            "post-install": [
+                "install -dm755 \"/app/lib64/qml/Qt/labs/presentation\"",
+                "install -m755 \"src/Clock.qml\" \"/app/lib64/qml/Qt/labs/presentation/Clock.qml\"",
+                "install -m755 \"src/CodeSlide.qml\" \"/app/lib64/qml/Qt/labs/presentation/CodeSlide.qml\"",
+                "install -m755 \"src/Presentation.qml\" \"/app/lib64/qml/Qt/labs/presentation/Presentation.qml\"",
+                "install -m755 \"src/qmldir\" \"/app/lib64/qml/Qt/labs/presentation/qmldir\"",
+                "install -m755 \"src/Slide.qml\" \"/app/lib64/qml/Qt/labs/presentation/Slide.qml\"",
+                "install -m755 \"src/SlideCounter.qml\" \"/app/lib64/qml/Qt/labs/presentation/SlideCounter.qml\""
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/qt-labs/qml-presentation-system.git"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "echo '# Empty makefile\n\nall:\n\techo \"Using an empty makefile doing nothing\"\n\ninstall:\n\techo \"Using an empty makefile doing nothing\"' > Makefile"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "flatpak-kde",
+            "config-opts": ["-DCMAKE_INSTALL_LIBDIR=lib"],
+            "cmake": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "file:///home/jgrulich/development/projects/others/flatpak-kde-presentation/"
+                }
+            ]
+        }
+    ]
+}

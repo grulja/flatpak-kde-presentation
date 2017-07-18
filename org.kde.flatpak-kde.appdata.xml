@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component type="desktop">
+    <id>org.kde.flatpak-kde.desktop</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0</project_license>
+    <name>Flatpak and KDE</name>
+    <summary>Flatpak and KDE presentation</summary>
+    <description>
+       <p>Presentation about current state of flatpak integration in KDE.</p>
+    </description>
+    <categories>
+        <category>System</category>
+    </categories>
+    <screenshots>
+      <screenshot type="default">
+        <image>https://jgrulich.fedorapeople.org/flatpak-kde.png</image>
+      </screenshot>
+    </screenshots>
+    <provides>
+        <binary>flatpak-kde</binary>
+    </provides>
+</component>

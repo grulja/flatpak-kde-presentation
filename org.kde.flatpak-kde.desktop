@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Flatpak and KDE
+Exec=flatpak-kde
+Icon=flatpak
+Type=Application
+InitialPreference=5
+GenericName=Presentation about Flatpak and KDE
+Categories=Qt;KDE;System;
+Keywords=guadec;flatpak;kde;
